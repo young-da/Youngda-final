@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="sub.js"></script>
+</head>
+
+<body id="survey_back">
+  <section id="survey_main">
+    <div id="trans">
+      <p id="thank">Thank you for visiting !</p>
+      <p id="thank2">다음 설문조사에 참여해주시면 감사하겠습니다.</p>
+      <form>
+        <fieldset>
+          <legend>check</legend>
+          <div>
+            <label for="age">나이</label><br>
+            <input type="number" name="age" id="age" min="0" max="150" step="1">
+          </div>
+          <div>
+            <label for="">성별<br></label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">남성</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female" id="female">여성</label>
+          </div>
+          <div>
+            <label for="">방문 경로<br></label>
+            <input type="radio" name="visit" id="search" value="search">
+            <label for="search">포털사이트 검색</label>
+            <input type="radio" name="visit" id="self_url" value="self_url">
+            <label for="self_url" id="self_url">직접 url 주소 입력<br></label>
+            <input type="radio" name="visit" id="sns" value="sns">
+            <label for="sns">SNS</label>
+            <input type="radio" name="visit" id="recommend" value="recommend">
+            <label for="recommend" id="recommend">지인 추천</label>
+          </div>
+          <div>
+            <label for="">흥미로웠던 기능(다중 선택 가능)<br></label>
+            <input type="checkbox" name="append" id="login">
+            <label for="serach">시계</label>
+            <input type="checkbox" name="append" id="game">
+            <label for="self_url" id="game">달력<br></label>
+            <input type="checkbox" name="append" id="draw">
+            <label for="sns">게임</label>
+            <input type="checkbox" name="append" id="list">
+            <label for="recommend" id="list">그림판</label>
+          </div>
+          <div>
+            <label for="tendi">홈페이지에 대한 건의사항</label><br>
+            <textarea name="tendi" id="tendi" cols="60" rows="8" placeholder="입력해주세요."></textarea>
+          </div>
+        </fieldset>
+        <button type="reset">초기화</button>
+        <button type="button" onclick="sub()">제출</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Copyright &copy; Youngda
+    </p>
+  </footer>
+</body>
+
+</html>

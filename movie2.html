@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youngda</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #334E70;">
+      <div class="container-fluid">
+        <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+            class="bi bi-shop" viewBox="0 0 16 16">
+            <path
+              d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" />
+          </svg></a><a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">IntroVideo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="teamproject.html">TeamProject</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Other
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="js.html">JS</a></li>
+                <li><a class="dropdown-item" href="movie.html">Movie</a></li>
+                <li><a class="dropdown-item" href="survey.html" target='_blank'>Survey</a></li>
+              </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="movie">
+    <div class="movie-box">
+      <div class="container">
+        <h4>추천 영화</h4>
+        <div id="movie-button">
+          <button type="button" onclick="location.href='movie.html'" class="btn btn-outline-primary">코미디</button>
+          <button type="button" onclick="location.href='movie2.html'" class="btn btn-success">멜로</button>
+          <button type="button" onclick="location.href='movie3.html'" class="btn btn-outline-danger">액션</button>
+        </div>
+        <div class="gallery2">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=142691" target="_blank"><img
+                    src="img/나의소녀시대.jpg"></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-title">나의 소녀시대</p>
+                  <p class="card-text">"고마워, 내 소중한 추억이 되어줘서."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery2">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" target="_blank"><img
+                    src="img/어바웃타임.jpg"></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-title">어바웃 타임</p>
+                  <p class="card-text">"어떠한 순간을 다시 살게 된다면, 과연 완벽한 사랑을 이룰 수 있을까?"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery2">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=181912" target="_blank">
+                  <img src="img/파이브피트.jpg">
+                </a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-title">파이브 피트</p>
+                  <p class="card-text">"사랑은 어디에서나 장애물을 넘어 꽃을 피운다."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>
+      Copyright &copy; Youngda<br>
+    </p>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

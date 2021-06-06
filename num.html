@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youngda</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+    var MinNum = "1";
+    var MaxNum = "100";
+    var NumberOfGuesses = 0;
+    var GuessedNum;
+    var response;
+    var GotIt;
+
+    function Random() {
+      var ran = (parseInt(Math.random() * MaxNum + 1));
+      return ran;
+    }
+
+    function GuessNum() {
+      GuessedNum = parseInt(document.forms[0].guess.value);
+      document.forms[0].guess.value = GuessedNum;
+
+      if (GuessedNum < myGuessedNumber) response = "더 높습니다.";
+      if (GuessedNum > myGuessedNumber) response = "더 낮습니다.";
+      if ((!GuessedNum) || (GuessedNum < MinNum) || (GuessedNum > MaxNum)) {
+        document.forms[0].guess.value = "";
+        response = "Re-enter number";
+        NumberOfGuesses--;
+      }
+      if (GuessedNum == myGuessedNumber) {
+        response = "맞았습니다!";
+        if (GotIt != 1) NumberOfGuesses++;
+        GotIt = 1;
+      }
+      else {
+        GotIt = 0;
+        NumberOfGuesses++;
+      }
+      document.forms[1].result.value = response;
+      document.forms[1].guesses.value = NumberOfGuesses;
+      document.forms[0].guess.focus();
+      document.forms[0].guess.select();
+      return true;
+    }
+
+    function GiveUp() {
+      if (!GuessedNum) var LastNum = "";
+      else if (GuessedNum) {
+        if (NumberOfGuesses == 1)
+          var Tries = "try";
+        else var Tries = "tries";
+        var LastNum = myGuessedNumber + " (" + NumberOfGuesses + "번 만에 맞췄습니다." + ")";
+      }
+      document.forms[1].guesses.value = "";
+      document.forms[1].result.value = "";
+      document.forms[1].lastnum.value = LastNum;
+      document.forms[1].storenum.value += myGuessedNumber + "(" + NumberOfGuesses + "), ";
+
+      document.forms[0].guess.focus();
+      document.forms[0].guess.select();
+      myGuessedNumber = Random();
+      NumberOfGuesses = 0;
+      GotIt = 0;
+    }
+
+    function NewGame() {
+      document.forms[0].guess.focus();
+      document.forms[0].guess.select();
+      myGuessedNumber = Random();
+      NumberOfGuesses = 0;
+    }
+  </script>
+</head>
+
+<body onLoad="NewGame()">
+  <section id="num">
+    <h6>숫자 맞추기 게임 </h6>
+    <div class="guess">
+      <script>document.write(MinNum)</script> 부터
+      <script>document.write(MaxNum)</script> 까지 숫자중 생각나는 숫자를 아래 <b>추측 숫자 항목</b>에 입력하세요.<BR>
+    </div>
+
+    <form>
+      <B>추측 숫자 :</B>
+      <input type="text" name="guess" size="3">
+      <input type="button" value=" 이걸까? " onClick="GuessNum()">
+      <input type="button" value=" 새게임 " onClick="GiveUp()">
+    </form>
+    <br>
+
+    <form>
+      <table>
+        <tr>
+          <td>메세지 :</td>
+          <td><input type="text" name="result" size="25"></td>
+        </tr>
+        <tr>
+          <td>시도 횟수 :</td>
+          <td><input type="text" name="guesses" size="3"></td>
+        </tr>
+        <tr>
+          <td>이전 점수 :</td>
+          <td><input type="text" name="lastnum" size="15"></td>
+        </tr>
+        <tr>
+          <td>총점수 :</td>
+          <td><input type="text" name="storenum" size="20"></td>
+        </tr>
+      </table>
+    </form>
+  </section>
+
+</body>
+
+</html>

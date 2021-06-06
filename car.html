@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youngda</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function Choose(choice) {
+      if (choice == 1) {
+        myCar = new Car("Audi", "e-트론 스포트백", "Gray", 60);
+        document.getElementById('image').src = "img/아우디.png";
+        myCar.show();
+      }
+      if (choice == 2) {
+        myCar = new Car("Jeep", "컴패스", "Blue", 60);
+        document.getElementById('image').src = "img/지프.png";
+        myCar.show();
+      }
+      if (choice == 3) {
+        myCar = new Car("Volkswagen", "티록", "Red", 60);
+        document.getElementById('image').src = "img/폭스바겐.png";
+        myCar.show();
+      }
+    }
+
+    function Car(maker, model, color, speed) {
+      this.maker = maker;
+      this.model = model;
+      this.color = color;
+      this.speed = speed;
+      this.show();
+    }
+
+    Car.prototype.show = function () {
+      document.getElementById('maker').innerHTML = this.maker;
+      document.getElementById('model').innerHTML = this.model;
+      document.getElementById('color').innerHTML = this.color;
+      document.getElementById('speed').innerHTML = this.speed;
+    }
+
+    Car.prototype.brake = function () {
+      if (this.speed > 0) this.speed -= 10;
+      document.getElementById('speed').innerHTML = this.speed;
+    }
+    Car.prototype.accel = function () {
+      if (this.speed < 300) this.speed += 10;
+      document.getElementById('speed').innerHTML = this.speed;
+    }
+    Car.prototype.stop = function () {
+      this.speed = 0;
+      document.getElementById('speed').innerHTML = this.speed;
+    }
+    Car.prototype.max = function () {
+      this.speed = 300;
+      document.getElementById('speed').innerHTML = this.speed;
+    }
+  </script>
+</head>
+
+<body>
+  <section id="car">
+    <h6>자동차 운전 게임</h6>
+    <p>
+      <img id="image" height="200"> <br>
+      메이커: <span id="maker"></span> <br>
+      모델명: <span id="model"></span> <br>
+      색상: <span id="color"></span> <br>
+      현재 속도: <span id="speed"></size> <br> <br>
+        자동차를 운전해 봅시다. 자동차를 선택해 주세요. <br>
+    </p>
+    <script>
+      myCar = new Car("Audi", "e-트론 스포트백", "Gray", 60);
+      document.getElementById('image').src = "img/아우디.png";
+      myCar.show();
+    </script>
+
+    <form>
+      <input type="button" value="Audi" onclick="Choose(1);">
+      <input type="button" value="Jeep" onclick="Choose(2);">
+      <input type="button" value="Volkswagen" onclick="Choose(3);">
+      <br><br>
+
+      <input type="button" value="가속" onclick="myCar.accel();">
+      <input type="button" value="감속" onclick="myCar.brake();">
+      <input type="button" value="부스터" onclick="myCar.max();">
+      <input type="button" value="정지" onclick="myCar.stop();">
+      <br>
+    </form>
+  </section>
+
+</body>
+
+</html>
