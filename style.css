@@ -739,13 +739,13 @@ textarea{
     height: 1430px;
   }
 
-  .gallery{
+  .gallery, .gallery2, .gallery3{
     width: 50%;
     text-align: center;
     margin: auto;
   }
 
-  .gallery img{
+  .gallery img, .gallery2 img, .gallery3 img{
     width: 100%!important;
   }
 
